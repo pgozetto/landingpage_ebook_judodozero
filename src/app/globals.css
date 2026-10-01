@@ -1,26 +1,109 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/*
+ * Style guide Judô do Zero (vermelho e branco)
+ * Raios: botões = pílula (full), cards = 16px (rounded-2xl), campos = 12px (rounded-xl).
+ * Tema: claro travado. A identidade da marca é fundo branco + vermelho, conforme a copy.
+ */
+@theme {
+  --color-judo-red: #c8102e;
+  --color-judo-red-deep: #a00c24;
+  --color-judo-red-soft: #fde8eb;
+  --color-judo-wine: #4a0510;
+  --color-paper: #faf8f7;
+  --color-ink: #18181b;
+  --color-ink-soft: #52525b;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --shadow-soft: 0 18px 50px -20px rgb(160 12 36 / 0.35);
+  --shadow-card: 0 10px 30px -18px rgb(74 5 16 / 0.35);
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-rise: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0) rotate(-6deg);
+    }
+    50% {
+      transform: translateY(-10px) rotate(-5deg);
+    }
   }
 }
 
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Altura da barra de aviso + navbar, para as âncoras não ficarem escondidas. */
+  scroll-padding-top: 7rem;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* Gradiente vermelho da marca (hero e oferta) */
+.bg-judo-gradient {
+  background:
+    radial-gradient(120% 90% at 85% 10%, rgb(255 255 255 / 0.14), transparent 55%),
+    linear-gradient(150deg, #d4152f 0%, #c8102e 40%, #8e0a20 100%);
+}
+
+/* Textura sutil de tatame nas seções vermelhas */
+.tatami-lines {
+  background-image:
+    linear-gradient(rgb(255 255 255 / 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 0.05) 1px, transparent 1px);
+  background-size: 64px 128px;
+}
+
+/* Acordeão do FAQ com <details> nativo */
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+details[open] .faq-icon {
+  transform: rotate(45deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
