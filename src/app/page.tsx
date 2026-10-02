@@ -11,7 +11,7 @@ import { Intro } from "@/components/sections/Intro";
 import { Offer } from "@/components/sections/Offer";
 import { Pains } from "@/components/sections/Pains";
 import { Preview } from "@/components/sections/Preview";
-import { QrVideos } from "@/components/sections/QrVideos";
+import { Videos } from "@/components/sections/Videos";
 import { StickyMobileCta } from "@/components/sections/StickyMobileCta";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { JsonLd } from "@/components/JsonLd";
@@ -61,7 +61,7 @@ export default function SalesPage() {
         <Pains />
         <Intro />
         <Contents />
-        <QrVideos />
+        <Videos />
         <ForWho />
         <Preview />
         <Author />

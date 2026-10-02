@@ -52,7 +52,7 @@ export default async function OpengraphImage() {
             Seus primeiros 90 dias no tatame
           </div>
           <div style={{ display: "flex", fontSize: 26, marginTop: 36, opacity: 0.8 }}>
-            Ebook + vídeos em QR code · {site.authorName}
+            Ebook + vídeo de cada técnica · {site.authorName}
           </div>
         </div>
 

@@ -1,61 +1,84 @@
 import { CheckCircle } from "@phosphor-icons/react/dist/ssr";
 import { CheckoutButton } from "@/components/ui/CheckoutButton";
 import { EbookCover } from "@/components/ui/EbookCover";
+import { Parallax } from "@/components/ui/Parallax";
 import { site } from "@/lib/site";
 
-const badges = ["Ebook em PDF", "Vídeos de cada técnica", "Acesso imediato"];
+const badges = ["Ebook em PDF", "Vídeo de cada técnica", "Acesso imediato"];
 
+/** Palavras do título. As de `mark` ganham a faixa branca por trás. */
+const title: { word: string; mark?: boolean }[] = [
+  { word: "Judô" },
+  { word: "do" },
+  { word: "Zero:" },
+  { word: "seus" },
+  { word: "primeiros" },
+  { word: "90 dias", mark: true },
+  { word: "no" },
+  { word: "tatame" },
+];
+
+/**
+ * Dobra 1: hero centralizado. O título entra palavra por palavra (CSS puro, aparece antes
+ * do JavaScript carregar, bom para o LCP) e o ebook flutua com parallax.
+ */
 export function Hero() {
   return (
     <section className="bg-judo-gradient relative overflow-hidden text-white">
       <div aria-hidden className="tatami-lines pointer-events-none absolute inset-0" />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute left-1/2 top-[62%] size-[36rem] -translate-x-1/2 rounded-full bg-white/10 blur-3xl"
+      />
 
-      <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 pb-16 pt-10 sm:px-6 md:grid-cols-[1.15fr_0.85fr] md:pb-24 md:pt-16 lg:pt-20">
-        <div className="[&>*]:animate-rise [&>*:nth-child(2)]:[animation-delay:80ms] [&>*:nth-child(3)]:[animation-delay:160ms] [&>*:nth-child(4)]:[animation-delay:220ms] [&>*:nth-child(5)]:[animation-delay:280ms] [&>*:nth-child(6)]:[animation-delay:340ms]">
-          <p className="inline-flex rounded-full border border-white/30 bg-white/10 px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.16em]">
-            Guia para faixas brancas
-          </p>
+      <div className="relative mx-auto flex max-w-5xl flex-col items-center px-4 pt-14 text-center sm:px-6 md:pt-20">
+        <h1 className="text-5xl font-extrabold leading-[1.02] tracking-tight sm:text-6xl lg:text-[5.2rem]">
+          {title.map(({ word, mark }, i) => (
+            <span key={i}>
+              <span
+                className={
+                  mark
+                    ? "relative isolate inline-block whitespace-nowrap animate-word before:absolute before:inset-x-[-0.08em] before:bottom-[0.08em] before:-z-10 before:h-[0.34em] before:origin-left before:animate-marker before:rounded-sm before:bg-white/25"
+                    : "inline-block animate-word"
+                }
+                style={{ animationDelay: `${i * 70}ms` }}
+              >
+                {word}
+              </span>
+              {i < title.length - 1 ? " " : null}
+            </span>
+          ))}
+        </h1>
 
-          <h1 className="mt-5 text-4xl font-extrabold leading-[1.02] tracking-tight sm:text-5xl lg:text-[3.6rem]">
-            Judô do Zero: seus primeiros 90 dias no tatame
-          </h1>
+        <p
+          className="mt-6 max-w-[34ch] animate-rise text-xl leading-relaxed text-white/90 sm:text-2xl"
+          style={{ animationDelay: "550ms" }}
+        >
+          Aprenda a cair, as primeiras técnicas e o seu primeiro randori. Com humor e vídeos.
+        </p>
 
-          <p className="mt-5 max-w-[52ch] text-lg leading-relaxed text-white/85">
-            Aprenda a cair, as primeiras técnicas e o que fazer no seu primeiro randori, com humor, passo a passo
-            e vídeos em QR code.
-          </p>
+        <ul
+          className="mt-7 flex animate-rise flex-wrap justify-center gap-x-6 gap-y-2 text-base font-medium sm:text-lg"
+          style={{ animationDelay: "650ms" }}
+        >
+          {badges.map((badge) => (
+            <li key={badge} className="flex items-center gap-1.5">
+              <CheckCircle weight="fill" aria-hidden className="size-5" />
+              {badge}
+            </li>
+          ))}
+        </ul>
 
-          <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-[15px] font-medium">
-            {badges.map((badge) => (
-              <li key={badge} className="flex items-center gap-1.5">
-                <CheckCircle weight="fill" aria-hidden className="size-5 text-white" />
-                {badge}
-              </li>
-            ))}
-          </ul>
-
-          <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-            <CheckoutButton location="hero" variant="white" size="lg" />
-            <a
-              href="#conteudo"
-              className="px-2 py-2 font-semibold text-white/90 underline decoration-white/40 underline-offset-4 transition-colors hover:text-white"
-            >
-              Ver o que tem dentro ↓
-            </a>
-          </div>
-
-          <p className="mt-5 text-sm text-white/70">
-            Pagamento seguro. Acesso por e-mail logo após a confirmação. Garantia de {site.guaranteeDays} dias.
+        <div className="mt-9 flex animate-rise flex-col items-center gap-3" style={{ animationDelay: "750ms" }}>
+          <CheckoutButton location="hero" variant="white" size="lg" />
+          <p className="text-sm text-white/75">
+            Pagamento seguro · Garantia de {site.guaranteeDays} dias
           </p>
         </div>
 
-        <div className="relative mx-auto flex justify-center md:justify-end">
-          <div
-            aria-hidden
-            className="absolute left-1/2 top-1/2 size-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/10 blur-2xl sm:size-96"
-          />
+        <Parallax distance={40} className="mt-14 pb-16 md:pb-24">
           <EbookCover priority className="animate-float motion-reduce:animate-none" />
-        </div>
+        </Parallax>
       </div>
     </section>
   );

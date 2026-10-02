@@ -16,7 +16,7 @@ export const site = {
   seo: {
     title: "Judô do Zero: ebook para iniciantes | Pedro Gozetto",
     description:
-      "Guia prático de judô para faixas brancas: quedas, projeções, imobilizações, etiqueta e plano de treino de 90 dias. Com vídeos em QR code.",
+      "Guia prático de judô para faixas brancas: quedas, projeções, imobilizações, etiqueta e plano de treino de 90 dias. Com vídeo de cada técnica.",
     keywords: [
       "ebook de judô",
       "judô para iniciantes",
@@ -70,14 +70,8 @@ export const site = {
   author: {
     /** Frase de destaque da dobra 3. Confirme se combina com a sua história. */
     introQuote: "Eu escrevi o guia que eu queria ter lido quando era faixa branca.",
-    /** Foto de judogi, sorrindo. Coloque em /public/images/pedro.webp e troque para o caminho. */
-    photo: null as string | null,
-    /** Sua história real, um parágrafo por item (resumo do capítulo 0 do ebook). */
-    story: [
-      "Treino judô há mais de 9 anos. Comecei aos 7, quando meus pais acharam melhor me colocar para cair do que para jogar futebol. Pensei em desistir mais de uma vez, e ainda bem que eles insistiram.",
-    ] as string[],
-    /** Completa "Eu criei o Judô do Zero porque ...". */
-    reason: "todo faixa branca passa pela mesma confusão no começo",
+    /** Foto de judogi (recortada e tratada a partir da foto original). */
+    photo: "/images/pedro.webp" as string | null,
   },
 
   /**

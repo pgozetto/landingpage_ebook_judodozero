@@ -11,7 +11,7 @@ export function Footer() {
   return (
     <footer className="bg-judo-wine pb-28 pt-14 text-white/80 md:pb-14">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-col items-center gap-6 text-center">
           <div className="flex items-center gap-5">
             <Logo tone="white" />
             {instagram ? (
@@ -26,7 +26,7 @@ export function Footer() {
             ) : null}
           </div>
           <nav aria-label="Rodapé">
-            <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium">
+            <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm font-medium">
               <li>
                 <Link href="/termos" className="hover:text-white">Termos de uso</Link>
               </li>
@@ -40,11 +40,11 @@ export function Footer() {
           </nav>
         </div>
 
-        <p className="mt-10 max-w-[80ch] text-sm leading-relaxed text-white/60">
+        <p className="mx-auto mt-10 max-w-[80ch] text-center text-sm leading-relaxed text-white/60">
           Este material tem fins educativos e não substitui o acompanhamento de um professor qualificado. Consulte um
           médico antes de iniciar qualquer atividade física. Os resultados variam de pessoa para pessoa.
         </p>
-        <p className="mt-4 text-sm text-white/60">
+        <p className="mt-4 text-center text-sm text-white/60">
           © {year} {site.authorName}. Todos os direitos reservados.
           {site.legalId ? ` CNPJ/CPF: ${site.legalId}` : ""}
         </p>

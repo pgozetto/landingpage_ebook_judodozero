@@ -1,6 +1,7 @@
 import { CheckCircle, Lightning, LockSimple, Wallet } from "@phosphor-icons/react/dist/ssr";
 import { CheckoutButton } from "@/components/ui/CheckoutButton";
 import { EbookCover } from "@/components/ui/EbookCover";
+import { Highlight } from "@/components/ui/Highlight";
 import { Reveal } from "@/components/ui/Reveal";
 import { formatPrice, site } from "@/lib/site";
 
@@ -9,7 +10,7 @@ export function Offer() {
   const { price } = site;
   const included = [
     site.ebookPages ? `Ebook Judô do Zero em PDF (${site.ebookPages} páginas)` : "Ebook Judô do Zero em PDF",
-    "QR codes com vídeo de cada técnica",
+    "Link para o vídeo de cada técnica",
     "Plano de treino de 90 dias com checklist mensal",
     "Glossário judoca com os termos japoneses do treino",
     ...(site.bonus ? [`Bônus: ${site.bonus.title}`] : []),
@@ -17,12 +18,12 @@ export function Offer() {
   ];
 
   return (
-    <section id="oferta" className="bg-judo-gradient relative overflow-hidden py-20 md:py-28">
+    <section id="oferta" className="bg-judo-gradient relative overflow-hidden py-24 md:py-32">
       <div aria-hidden className="tatami-lines pointer-events-none absolute inset-0" />
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <Reveal>
-          <h2 className="text-center text-3xl font-extrabold tracking-tight text-white sm:text-5xl">
-            Comece hoje o seu Judô do Zero
+          <h2 className="text-center text-4xl font-extrabold tracking-tight text-white sm:text-6xl">
+            Comece hoje o seu <Highlight tone="light">Judô do Zero</Highlight>
           </h2>
         </Reveal>
 
@@ -35,7 +36,7 @@ export function Offer() {
             <div className="p-7 sm:p-10">
               <ul className="space-y-3">
                 {included.map((item) => (
-                  <li key={item} className="flex gap-3 leading-snug">
+                  <li key={item} className="flex gap-3 text-lg leading-snug">
                     <CheckCircle aria-hidden weight="fill" className="size-6 shrink-0 text-judo-red" />
                     {item}
                   </li>
@@ -50,7 +51,7 @@ export function Offer() {
                 ) : null}
                 <p className="flex items-baseline gap-2">
                   <span className="text-ink-soft">{price.full ? "Por apenas" : "Por"}</span>
-                  <span className="font-display text-5xl font-extrabold tracking-tight text-judo-red">
+                  <span className="font-display text-6xl font-extrabold tracking-tight text-judo-red">
                     {formatPrice(price.current)}
                   </span>
                 </p>

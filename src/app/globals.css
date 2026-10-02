@@ -22,6 +22,22 @@
 
   --animate-float: float 6s ease-in-out infinite;
   --animate-rise: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-word: word 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-marker: marker 0.9s 0.7s cubic-bezier(0.65, 0, 0.35, 1) both;
+
+  @keyframes word {
+    from {
+      opacity: 0;
+      transform: translateY(0.45em);
+      filter: blur(10px);
+    }
+  }
+
+  @keyframes marker {
+    from {
+      transform: scaleX(0);
+    }
+  }
 
   @keyframes rise {
     from {

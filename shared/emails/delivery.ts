@@ -35,7 +35,7 @@ export function buildDeliveryEmail({
   const tips = [
     "Comece pela introdução e pelo capítulo de etiqueta",
     "Pratique as quedas (ukemi) antes de cada treino",
-    "Use os QR codes para ver os vídeos das técnicas",
+    "Toque nos links das técnicas para ver os vídeos",
     "Volte ao plano de 90 dias todo mês e refaça o checklist",
   ];
 

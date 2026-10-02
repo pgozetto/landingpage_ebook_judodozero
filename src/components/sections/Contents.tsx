@@ -9,6 +9,7 @@ import {
   Translate,
 } from "@phosphor-icons/react/dist/ssr";
 import type { Icon } from "@phosphor-icons/react";
+import { Highlight } from "@/components/ui/Highlight";
 import { Reveal } from "@/components/ui/Reveal";
 import { cn } from "@/lib/cn";
 import { site } from "@/lib/site";
@@ -27,21 +28,21 @@ const hasBonus = Boolean(site.bonus);
 const items: Item[] = [
   {
     title: "Etiqueta, judogi e faixa",
-    text: "O que levar ao primeiro treino, como se comportar no tatame e como amarrar a faixa para ela não soltar.",
+    text: "O que levar, como se comportar e como amarrar a faixa sem soltar.",
     icon: BookOpenText,
     className: "lg:col-span-2",
     tone: "plain",
   },
   {
     title: "Ukemi, a arte de cair",
-    text: "As 3 quedas básicas explicadas com calma. Quem aprende a cair bem treina com mais confiança.",
+    text: "As 3 quedas básicas. Quem cai bem treina sem medo.",
     icon: ShieldCheck,
     className: "lg:col-span-2",
     tone: "soft",
   },
   {
     title: "5 projeções essenciais",
-    text: "Com passo a passo e o erro mais comum de cada uma.",
+    text: "Passo a passo e o erro mais comum de cada uma.",
     icon: PersonSimpleTaiChi,
     className: "sm:col-span-2 lg:col-span-2 lg:row-span-2",
     tone: "red",
@@ -49,21 +50,21 @@ const items: Item[] = [
   },
   {
     title: "3 imobilizações básicas",
-    text: "Kesa-gatame, Yoko-shiho-gatame e Kami-shiho-gatame para você começar a se orientar no chão.",
+    text: "Kesa, Yoko-shiho e Kami-shiho-gatame para se orientar no chão.",
     icon: Barbell,
     className: "lg:col-span-2",
     tone: "plain",
   },
   {
     title: "Seu primeiro randori",
-    text: "O que fazer antes, durante e depois da luta livre de treino, e como aproveitar para aprender.",
+    text: "Antes, durante e depois da luta livre de treino.",
     icon: Sparkle,
     className: "lg:col-span-2",
     tone: "ink",
   },
   {
     title: "Plano de treino de 90 dias",
-    text: "Um roteiro simples, dividido em 3 fases, com checklist mensal para acompanhar sua evolução.",
+    text: "Um roteiro em 3 fases, com checklist mensal.",
     icon: CalendarCheck,
     className: hasBonus ? "lg:col-span-2" : "sm:col-span-2 lg:col-span-3",
     tone: "paper",
@@ -71,7 +72,7 @@ const items: Item[] = [
   },
   {
     title: "Glossário judoca",
-    text: "Os termos japoneses que você vai ouvir em todo treino, explicados em português.",
+    text: "Os termos japoneses do treino, em português.",
     icon: Translate,
     className: hasBonus ? "lg:col-span-2" : "sm:col-span-2 lg:col-span-3",
     tone: "plain",
@@ -99,11 +100,11 @@ const toneClass: Record<Item["tone"], string> = {
 /** Dobra 4: o que tem dentro, em grade bento (1 coluna no celular, 2 no tablet, 6 trilhas no desktop). */
 export function Contents() {
   return (
-    <section id="conteudo" className="bg-white py-20 md:py-28">
+    <section id="conteudo" className="bg-white py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <Reveal>
-          <h2 className="max-w-[22ch] text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl">
-            O que você vai encontrar dentro do ebook
+        <Reveal className="text-center">
+          <h2 className="mx-auto max-w-[20ch] text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl">
+            O que tem <Highlight>dentro do ebook</Highlight>
           </h2>
         </Reveal>
 
@@ -116,15 +117,15 @@ export function Contents() {
                 as="li"
                 key={item.title}
                 delay={(i % 3) * 0.06}
-                className={cn("flex flex-col rounded-2xl p-6 sm:p-7", toneClass[item.tone], item.className)}
+                className={cn("flex flex-col rounded-2xl p-7 transition-transform duration-300 hover:-translate-y-1", toneClass[item.tone], item.className)}
               >
                 <Icon
                   aria-hidden
                   weight="duotone"
                   className={cn("size-9", dark ? "text-white" : "text-judo-red")}
                 />
-                <h3 className="mt-5 text-xl font-bold leading-snug tracking-tight">{item.title}</h3>
-                <p className={cn("mt-2 leading-relaxed", dark ? "text-white/80" : "text-ink-soft")}>{item.text}</p>
+                <h3 className="mt-5 text-2xl font-bold leading-snug tracking-tight">{item.title}</h3>
+                <p className={cn("mt-2 text-lg leading-relaxed", dark ? "text-white/80" : "text-ink-soft")}>{item.text}</p>
                 {item.extra ? (
                   <ul className={cn("mt-5 flex flex-wrap gap-2", item.tone === "red" && "lg:mt-auto lg:pt-6")}>
                     {item.extra.map((tag) => (
