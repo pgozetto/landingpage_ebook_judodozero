@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 
 const badges = ["Ebook em PDF", "Vídeo de cada técnica", "Acesso imediato"];
 
-/** Palavras do título. As de `mark` ganham a faixa branca por trás. */
+/** Palavras do título. As de `mark` ficam juntas na mesma linha. */
 const title: { word: string; mark?: boolean }[] = [
   { word: "Judô" },
   { word: "do" },
@@ -36,11 +36,7 @@ export function Hero() {
           {title.map(({ word, mark }, i) => (
             <span key={i}>
               <span
-                className={
-                  mark
-                    ? "relative isolate inline-block whitespace-nowrap animate-word before:absolute before:inset-x-[-0.08em] before:bottom-[0.08em] before:-z-10 before:h-[0.34em] before:origin-left before:animate-marker before:rounded-sm before:bg-white/25"
-                    : "inline-block animate-word"
-                }
+                className={mark ? "inline-block whitespace-nowrap animate-word" : "inline-block animate-word"}
                 style={{ animationDelay: `${i * 70}ms` }}
               >
                 {word}
