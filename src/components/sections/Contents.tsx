@@ -125,7 +125,7 @@ export function Contents() {
                   className={cn("size-9", dark ? "text-white" : "text-judo-red")}
                 />
                 <h3 className="mt-5 text-2xl font-bold leading-snug tracking-tight">{item.title}</h3>
-                <p className={cn("mt-2 text-lg leading-relaxed", dark ? "text-white/80" : "text-ink-soft")}>{item.text}</p>
+                <p className={cn("mt-2 text-lg leading-relaxed", dark ? "text-white" : "text-ink-soft")}>{item.text}</p>
                 {item.extra ? (
                   <ul className={cn("mt-5 flex flex-wrap gap-2", item.tone === "red" && "lg:mt-auto lg:pt-6")}>
                     {item.extra.map((tag) => (

@@ -14,11 +14,11 @@ export default function PrivacyPage() {
     <LegalPage title="Política de privacidade">
       <p>
         Esta política explica como {site.authorName} trata os dados pessoais de quem visita o site do Judô do Zero,
-        baixa o mini guia ou compra o ebook, de acordo com a Lei Geral de Proteção de Dados (Lei 13.709/2018).
+        baixa a amostra grátis ou compra o ebook, de acordo com a Lei Geral de Proteção de Dados (Lei 13.709/2018).
       </p>
       <h2>Quais dados coletamos</h2>
       <p>
-        Nome e e-mail, quando você pede o mini guia grátis. Dados de compra (nome, e-mail, CPF e pagamento) são
+        Nome e e-mail, quando você pede a amostra grátis. Dados de compra (nome, e-mail, CPF e pagamento) são
         coletados e processados diretamente pela plataforma de pagamento, não por este site. Também usamos cookies e
         pixels de medição (Google Analytics, Meta e TikTok) para entender de onde vêm as visitas e melhorar os anúncios.
       </p>

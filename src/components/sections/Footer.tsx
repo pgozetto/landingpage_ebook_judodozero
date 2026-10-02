@@ -9,7 +9,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-judo-wine pb-28 pt-14 text-white/80 md:pb-14">
+    <footer className="bg-judo-wine pb-28 pt-14 text-white md:pb-14">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex flex-col items-center gap-6 text-center">
           <div className="flex items-center gap-5">
@@ -40,11 +40,11 @@ export function Footer() {
           </nav>
         </div>
 
-        <p className="mx-auto mt-10 max-w-[80ch] text-center text-sm leading-relaxed text-white/60">
+        <p className="mx-auto mt-10 max-w-[80ch] text-center text-sm leading-relaxed text-white/85">
           Este material tem fins educativos e não substitui o acompanhamento de um professor qualificado. Consulte um
           médico antes de iniciar qualquer atividade física. Os resultados variam de pessoa para pessoa.
         </p>
-        <p className="mt-4 text-center text-sm text-white/60">
+        <p className="mt-4 text-center text-sm text-white/85">
           © {year} {site.authorName}. Todos os direitos reservados.
           {site.legalId ? ` CNPJ/CPF: ${site.legalId}` : ""}
         </p>

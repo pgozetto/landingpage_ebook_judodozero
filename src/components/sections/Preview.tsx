@@ -32,7 +32,7 @@ export function Preview() {
           href="/mini-guia"
           className="text-lg font-semibold text-judo-red underline decoration-judo-red/30 underline-offset-4 hover:decoration-judo-red"
         >
-          Prefere testar antes? Baixe o mini guia grátis →
+          Prefere testar antes? Leia uma amostra grátis →
         </Link>
       </div>
     </section>

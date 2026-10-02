@@ -46,11 +46,11 @@ export function Author() {
           </h2>
           <div className="mt-6 space-y-4 text-xl leading-relaxed text-ink-soft">
             <p>
-              Judoca <strong className="text-ink">{site.authorBelt}</strong>, com mais de{" "}
-              <strong className="text-ink">9 anos de tatame</strong>. Comecei aos 7, desajeitado como todo faixa
+              Judoca <strong className="text-ink">{site.authorBelt}</strong>, tenho mais de{" "}
+              <strong className="text-ink">9 anos de judô</strong>. Comecei aos 7, perdido e travado igual todo faixa
               branca.
             </p>
-            <p>Escrevi o Judô do Zero para o seu começo ser mais leve do que foi o meu.</p>
+            <p>Escrevi o Judô do Zero para o seu começo ser melhor e com mais orientação do que o meu foi.</p>
           </div>
 
           {instagram || tiktok ? (

@@ -47,10 +47,10 @@ export function Hero() {
         </h1>
 
         <p
-          className="mt-6 max-w-[34ch] animate-rise text-xl leading-relaxed text-white/90 sm:text-2xl"
+          className="mt-6 max-w-[34ch] animate-rise text-xl leading-relaxed text-white sm:text-2xl"
           style={{ animationDelay: "550ms" }}
         >
-          Aprenda a cair, as primeiras técnicas e o seu primeiro randori. Com humor e vídeos.
+          Aprenda a cair, as primeiras técnicas e o seu primeiro randori.
         </p>
 
         <ul
@@ -67,7 +67,7 @@ export function Hero() {
 
         <div className="mt-9 flex animate-rise flex-col items-center gap-3" style={{ animationDelay: "750ms" }}>
           <CheckoutButton location="hero" variant="white" size="lg" />
-          <p className="text-sm text-white/75">
+          <p className="text-sm text-white">
             Pagamento seguro · Garantia de {site.guaranteeDays} dias
           </p>
         </div>

@@ -16,11 +16,11 @@ export function Videos() {
       <div aria-hidden className="tatami-lines pointer-events-none absolute inset-0" />
       <div className="relative mx-auto max-w-5xl px-4 text-center sm:px-6">
         <Reveal>
-          <p className="text-sm font-bold uppercase tracking-[0.18em] text-white/80">O diferencial</p>
+          <p className="text-sm font-bold uppercase tracking-[0.18em] text-white">O diferencial</p>
           <h2 className="mx-auto mt-4 max-w-[18ch] text-4xl font-extrabold leading-tight tracking-tight sm:text-6xl">
             Cada técnica tem <Highlight tone="light">um vídeo</Highlight>
           </h2>
-          <p className="mx-auto mt-6 max-w-[40ch] text-xl leading-relaxed text-white/90">
+          <p className="mx-auto mt-6 max-w-[40ch] text-xl leading-relaxed text-white">
             Ler ajuda. Ver o movimento ajuda muito mais. É só tocar no link da página.
           </p>
         </Reveal>
@@ -45,7 +45,7 @@ export function Videos() {
                   <Icon aria-hidden weight={featured ? "bold" : "duotone"} className="size-12" />
                 </span>
                 <h3 className="mt-6 text-2xl font-bold">{step.title}</h3>
-                <p className="mt-2 text-lg text-white/85">{step.text}</p>
+                <p className="mt-2 text-lg text-white">{step.text}</p>
               </Reveal>
             );
           })}

@@ -6,7 +6,7 @@ const yes = [
   "Quer começar e não sabe por onde",
   "Já começou e ainda se sente perdido",
   "É pai ou mãe de um judoca iniciante",
-  "Gosta de aprender com humor",
+  "Gosta de aprender de forma descontraída",
 ];
 
 const no = ["Já é avançado e busca técnicas de competição", "Quer aprender só lendo, sem professor"];

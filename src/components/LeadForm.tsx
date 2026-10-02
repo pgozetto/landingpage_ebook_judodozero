@@ -60,7 +60,7 @@ export function LeadForm({ source = "mini-guia" }: { source?: LeadSource }) {
       <div role="status" className="flex gap-3 rounded-2xl bg-judo-red-soft p-6 text-judo-wine">
         <CheckCircle aria-hidden weight="fill" className="size-7 shrink-0 text-judo-red" />
         <p className="text-lg font-semibold leading-snug">
-          Pronto! Enviei o mini guia para o seu e-mail. Confira também a caixa de promoções.
+          Pronto! Enviei a amostra grátis para o seu e-mail. Confira também a caixa de promoções e o spam.
         </p>
       </div>
     );
@@ -134,7 +134,7 @@ export function LeadForm({ source = "mini-guia" }: { source?: LeadSource }) {
             <CircleNotch aria-hidden weight="bold" className="size-5 animate-spin" /> Enviando...
           </>
         ) : (
-          "Quero o mini guia grátis"
+          "Quero a amostra grátis"
         )}
       </button>
       <p className="text-center text-sm text-ink-soft">Sem spam. Você pode sair da lista quando quiser.</p>

@@ -19,15 +19,15 @@ export function FinalCta() {
         <h2 className="text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-7xl">
           Seu primeiro tatame <Highlight tone="light">começa aqui</Highlight>
         </h2>
-        <p className="mt-6 max-w-[38ch] text-xl leading-relaxed text-white/90">
+        <p className="mt-6 max-w-[38ch] text-xl leading-relaxed text-white">
           Chegue ao primeiro treino sabendo amarrar a faixa, cair sem medo e entender o sensei.
           {cheap ? " Tudo por menos que um lanche." : ""}
         </p>
         <CheckoutButton location="chamada-final" label="Começar meu Judô do Zero" variant="white" size="lg" className="mt-9" />
-        <p className="mt-10 text-sm text-white/75">
+        <p className="mt-10 text-sm text-white">
           P.S.: Ainda em dúvida?{" "}
           <Link href="/mini-guia" className="font-semibold text-white underline underline-offset-4">
-            Baixe o mini guia grátis
+            Leia uma amostra grátis
           </Link>{" "}
           e conheça o meu jeito de ensinar antes de decidir.
         </p>
