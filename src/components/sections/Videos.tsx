@@ -12,7 +12,7 @@ const steps = [
 /** Dobra 5: o diferencial. Os vídeos ficam em links dentro do PDF (não há QR codes). */
 export function Videos() {
   return (
-    <section id="videos" className="bg-judo-red relative overflow-hidden py-24 text-white md:py-32">
+    <section id="videos" className="bg-judo-red text-shadow-soft relative overflow-hidden py-24 text-white md:py-32">
       <div aria-hidden className="tatami-lines pointer-events-none absolute inset-0" />
       <div className="relative mx-auto max-w-5xl px-4 text-center sm:px-6">
         <Reveal>

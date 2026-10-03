@@ -92,7 +92,7 @@ if (site.bonus) {
 const toneClass: Record<Item["tone"], string> = {
   plain: "bg-white ring-1 ring-zinc-200",
   soft: "bg-judo-red-soft",
-  red: "bg-judo-red text-white",
+  red: "bg-judo-red text-white text-shadow-soft",
   ink: "bg-ink text-white",
   paper: "bg-paper ring-1 ring-zinc-200",
 };

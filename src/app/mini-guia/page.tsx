@@ -23,7 +23,7 @@ const perks = [
 export default function MiniGuidePage() {
   return (
     <main className="grid min-h-[100dvh] lg:grid-cols-2">
-      <section className="bg-judo-gradient relative flex flex-col justify-center overflow-hidden px-4 py-12 text-white sm:px-10 lg:px-16">
+      <section className="bg-judo-gradient text-shadow-soft relative flex flex-col justify-center overflow-hidden px-4 py-12 text-white sm:px-10 lg:px-16">
         <div aria-hidden className="tatami-lines pointer-events-none absolute inset-0" />
         <div className="relative max-w-xl">
           <Link href="/" aria-label="Judô do Zero, página inicial">

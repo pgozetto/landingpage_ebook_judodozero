@@ -18,7 +18,7 @@ export function Offer() {
   ];
 
   return (
-    <section id="oferta" className="bg-judo-gradient relative overflow-hidden py-24 md:py-32">
+    <section id="oferta" className="bg-judo-gradient text-shadow-soft relative overflow-hidden py-24 md:py-32">
       <div aria-hidden className="tatami-lines pointer-events-none absolute inset-0" />
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <Reveal>
@@ -28,7 +28,7 @@ export function Offer() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <div className="mx-auto mt-12 grid max-w-4xl overflow-hidden rounded-2xl bg-white shadow-[0_40px_90px_-30px_rgb(40_0_8/0.7)] md:grid-cols-[0.8fr_1.2fr]">
+          <div className="mx-auto mt-12 grid max-w-4xl overflow-hidden rounded-2xl bg-white text-shadow-none shadow-[0_40px_90px_-30px_rgb(40_0_8/0.7)] md:grid-cols-[0.8fr_1.2fr]">
             <div className="hidden items-center justify-center bg-paper p-10 md:flex">
               <EbookCover size="sm" />
             </div>

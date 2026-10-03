@@ -24,11 +24,11 @@ const title: { word: string; mark?: boolean }[] = [
  */
 export function Hero() {
   return (
-    <section className="bg-judo-gradient relative overflow-hidden text-white">
+    <section className="bg-judo-gradient text-shadow-soft relative overflow-hidden text-white">
       <div aria-hidden className="tatami-lines pointer-events-none absolute inset-0" />
       <div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-[62%] size-[36rem] -translate-x-1/2 rounded-full bg-white/10 blur-3xl"
+        className="pointer-events-none absolute left-1/2 top-[62%] size-[30rem] -translate-x-1/2 rounded-full bg-black/20 blur-3xl"
       />
 
       <div className="relative mx-auto flex max-w-5xl flex-col items-center px-4 pt-14 text-center sm:px-6 md:pt-20">
@@ -72,7 +72,11 @@ export function Hero() {
           </p>
         </div>
 
-        <Parallax distance={40} className="mt-14 pb-16 md:pb-24">
+        <Parallax distance={40} className="relative mt-14 pb-16 md:pb-24">
+          <div
+            aria-hidden
+            className="absolute bottom-6 left-1/2 h-12 w-60 -translate-x-1/2 rounded-[50%] bg-black/55 blur-2xl md:bottom-12 lg:w-72"
+          />
           <EbookCover priority className="animate-float motion-reduce:animate-none" />
         </Parallax>
       </div>

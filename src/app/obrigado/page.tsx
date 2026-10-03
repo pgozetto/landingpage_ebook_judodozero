@@ -53,7 +53,7 @@ export default function ThankYouPage() {
         {site.ebookAccessUrl ? (
           <a
             href={site.ebookAccessUrl}
-            className="mt-12 inline-flex h-14 items-center gap-2 rounded-full bg-judo-red px-8 text-lg font-semibold text-white shadow-soft transition hover:bg-judo-red-deep active:scale-[0.98]"
+            className="mt-12 inline-flex h-14 items-center gap-2 rounded-full bg-judo-red text-shadow-soft px-8 text-lg font-semibold text-white shadow-soft transition hover:bg-judo-red-deep active:scale-[0.98]"
           >
             <DownloadSimple aria-hidden weight="bold" className="size-5" />
             Acessar meu ebook

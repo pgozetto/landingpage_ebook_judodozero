@@ -33,7 +33,7 @@ export function EbookCover({
           aria-hidden
           className="absolute inset-y-1 -right-2 w-3 rounded-r-sm bg-[repeating-linear-gradient(90deg,#fff_0,#fff_2px,#e4e4e7_2px,#e4e4e7_3px)]"
         />
-        <div className="relative aspect-[420/595] overflow-hidden rounded-r-xl rounded-l-sm bg-judo-red shadow-[24px_30px_60px_-18px_rgb(30_0_6/0.7)] ring-1 ring-white/40">
+        <div className="relative aspect-[420/595] overflow-hidden rounded-r-xl rounded-l-sm bg-judo-red shadow-[0_40px_80px_-12px_rgb(0_0_0/0.6),0_16px_32px_-10px_rgb(0_0_0/0.45),0_0_50px_rgb(0_0_0/0.2)] ring-1 ring-white/40">
           <Image
             src="/ebook/capa.webp"
             alt="Capa do ebook Judô do Zero: seus primeiros 90 dias no tatame, de Pedro Gozetto"

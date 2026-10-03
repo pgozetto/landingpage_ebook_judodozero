@@ -16,7 +16,7 @@ export function Header() {
     <header className="sticky top-0 z-40">
       <a
         href="#oferta"
-        className="flex h-10 items-center justify-center gap-2 bg-judo-red px-4 text-center text-[13px] font-medium text-white sm:text-sm"
+        className="flex h-10 items-center justify-center gap-2 bg-judo-red text-shadow-soft px-4 text-center text-[13px] font-medium text-white sm:text-sm"
       >
         <span className="truncate">
           <span className="hidden sm:inline">Preço de lançamento por tempo limitado: </span>

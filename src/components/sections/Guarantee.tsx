@@ -10,7 +10,7 @@ export function Guarantee() {
       <Reveal className="mx-auto flex max-w-2xl flex-col items-center gap-8 px-4 text-center sm:px-6">
         <div className="relative grid size-32 shrink-0 place-items-center rounded-full bg-judo-red-soft">
           <ShieldCheck aria-hidden weight="duotone" className="size-16 text-judo-red" />
-          <span className="absolute -bottom-2 rounded-full bg-judo-red px-3 py-1 text-xs font-bold text-white">
+          <span className="absolute -bottom-2 rounded-full bg-judo-red text-shadow-soft px-3 py-1 text-xs font-bold text-white">
             {site.guaranteeDays} dias
           </span>
         </div>

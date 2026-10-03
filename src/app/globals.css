@@ -50,6 +50,13 @@
   }
 }
 
+/* Sombra suave para texto branco sobre vermelho (herdada pelos filhos; use text-shadow-none para remover). */
+@utility text-shadow-soft {
+  text-shadow:
+    0 1px 2px rgb(0 0 0 / 0.16),
+    0 3px 14px rgb(0 0 0 / 0.2);
+}
+
 :root {
   color-scheme: light;
 }

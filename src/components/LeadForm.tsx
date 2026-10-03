@@ -127,7 +127,7 @@ export function LeadForm({ source = "mini-guia" }: { source?: LeadSource }) {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-judo-red px-8 text-lg font-semibold text-white shadow-soft transition hover:bg-judo-red-deep active:scale-[0.98] disabled:cursor-wait disabled:opacity-80"
+        className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-judo-red text-shadow-soft px-8 text-lg font-semibold text-white shadow-soft transition hover:bg-judo-red-deep active:scale-[0.98] disabled:cursor-wait disabled:opacity-80"
       >
         {status === "loading" ? (
           <>

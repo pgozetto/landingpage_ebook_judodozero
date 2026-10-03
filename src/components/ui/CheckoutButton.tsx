@@ -49,9 +49,9 @@ export function CheckoutButton({
         "hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]",
         "focus-visible:outline-2 focus-visible:outline-offset-4",
         variant === "red" &&
-          "bg-judo-red text-white shadow-soft hover:bg-judo-red-deep focus-visible:outline-judo-red",
+          "bg-judo-red text-white text-shadow-soft shadow-soft hover:bg-judo-red-deep focus-visible:outline-judo-red",
         variant === "white" &&
-          "bg-white text-judo-red shadow-[0_18px_40px_-18px_rgb(0_0_0/0.45)] hover:bg-judo-red-soft focus-visible:outline-white",
+          "bg-white text-judo-red text-shadow-none shadow-[0_18px_40px_-18px_rgb(0_0_0/0.45)] hover:bg-judo-red-soft focus-visible:outline-white",
         size === "md" && "h-12 px-6 text-base",
         size === "lg" && "h-14 px-8 text-lg",
         fullWidth && "w-full",

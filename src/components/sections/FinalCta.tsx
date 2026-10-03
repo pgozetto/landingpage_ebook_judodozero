@@ -10,7 +10,7 @@ export function FinalCta() {
   const cheap = site.price.current <= 40;
 
   return (
-    <section id="chamada-final" className="bg-judo-red relative flex min-h-[100dvh] items-center overflow-hidden py-20 text-white md:min-h-0 md:py-28">
+    <section id="chamada-final" className="bg-judo-red text-shadow-soft relative flex min-h-[100dvh] items-center overflow-hidden py-20 text-white md:min-h-0 md:py-28">
       <span
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-1/2 size-[34rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/[0.07]"
