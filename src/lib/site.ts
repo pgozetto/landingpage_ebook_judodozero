@@ -29,6 +29,8 @@ export const site = {
   },
 
   /** Link do checkout (Hotmart / Kiwify / Eduzz). PREENCHER via .env */
+  /** ID do pixel da Meta. É público (aparece no HTML), por isso tem valor padrão aqui. */
+  metaPixelId: process.env.NEXT_PUBLIC_META_PIXEL_ID || "2235996023637025",
   checkoutUrl: process.env.NEXT_PUBLIC_CHECKOUT_URL || "",
   /** Link da área de membros / download, usado na página de obrigado. PREENCHER via .env */
   ebookAccessUrl: process.env.NEXT_PUBLIC_EBOOK_ACCESS_URL || "",

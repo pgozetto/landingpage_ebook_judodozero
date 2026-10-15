@@ -35,7 +35,7 @@ const TIKTOK_MAP: Partial<Record<FunnelEvent["name"], string>> = {
   cta_click: "ClickButton",
 };
 
-export function track(event: FunnelEvent) {
+export function track(event: FunnelEvent, options: { eventId?: string } = {}) {
   if (typeof window === "undefined") return;
   const params = (event.params ?? {}) as Record<string, unknown>;
   const withCurrency = "value" in params ? { ...params, currency: "BRL" } : params;
@@ -44,8 +44,9 @@ export function track(event: FunnelEvent) {
     window.gtag?.("event", event.name, withCurrency);
 
     const metaName = META_MAP[event.name];
-    if (metaName) window.fbq?.("track", metaName, withCurrency);
-    else window.fbq?.("trackCustom", event.name, withCurrency);
+    const metaOptions = options.eventId ? { eventID: options.eventId } : undefined;
+    if (metaName) window.fbq?.("track", metaName, withCurrency, metaOptions);
+    else window.fbq?.("trackCustom", event.name, withCurrency, metaOptions);
 
     const ttName = TIKTOK_MAP[event.name];
     if (ttName) window.ttq?.track(ttName, withCurrency);

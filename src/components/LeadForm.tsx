@@ -24,6 +24,7 @@ export function LeadForm({ source = "mini-guia" }: { source?: LeadSource }) {
       source,
       utm: captureUtm(),
       consent: true,
+      eventId: crypto.randomUUID(),
     };
 
     const check = validateLead(payload);
@@ -47,7 +48,7 @@ export function LeadForm({ source = "mini-guia" }: { source?: LeadSource }) {
         setStatus("error");
         return;
       }
-      track({ name: "lead", params: { source } });
+      track({ name: "lead", params: { source } }, { eventId: check.data.eventId });
       setStatus("success");
     } catch {
       setMessage("Sem conexão no momento. Confira a internet e tente de novo.");

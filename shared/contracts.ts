@@ -22,6 +22,8 @@ export interface LeadRequest {
   utm?: Partial<Record<UtmKey, string>>;
   /** Consentimento LGPD para receber e-mails. */
   consent: true;
+  /** ID do evento, igual no pixel e na API de Conversões, para a Meta não contar duas vezes. */
+  eventId?: string;
 }
 
 export interface LeadResponse {
@@ -74,7 +76,10 @@ export function validateLead(input: unknown):
     if (typeof value === "string" && value.length <= 120) utm[key] = value;
   }
 
-  return { ok: true, data: { name, email, source, utm, consent: true } };
+  const eventId =
+    typeof body.eventId === "string" && /^[\w-]{8,64}$/.test(body.eventId) ? body.eventId : undefined;
+
+  return { ok: true, data: { name, email, source, utm, consent: true, eventId } };
 }
 
 /* ------------------------------------------------------------------ */

@@ -1,7 +1,8 @@
 import Script from "next/script";
+import { site } from "@/lib/site";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
-const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID;
+const META_PIXEL_ID = site.metaPixelId;
 const TIKTOK_PIXEL_ID = process.env.NEXT_PUBLIC_TIKTOK_PIXEL_ID;
 
 /**

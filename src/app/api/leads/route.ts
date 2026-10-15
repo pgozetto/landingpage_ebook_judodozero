@@ -1,7 +1,8 @@
-import { NextResponse } from "next/server";
+import { after, NextResponse } from "next/server";
 import { validateLead, type ApiError, type LeadResponse } from "@shared/contracts";
 import { BackendError, backendConfigured, backendFetch } from "@/lib/backend";
 import { miniGuideDeliveryConfigured, sendMiniGuide } from "@/lib/brevo";
+import { sendMetaEvent } from "@/lib/meta-capi";
 
 /**
  * POST /api/leads
@@ -25,6 +26,16 @@ export async function POST(request: Request) {
   if (miniGuideDeliveryConfigured) {
     try {
       await sendMiniGuide(result.data);
+      after(() =>
+        sendMetaEvent({
+          eventName: "Lead",
+          eventId: result.data.eventId,
+          request,
+          email: result.data.email,
+          firstName: result.data.name,
+          customData: { content_name: "Amostra grátis", lead_source: result.data.source },
+        }),
+      );
       return NextResponse.json<LeadResponse>({ ok: true });
     } catch (error) {
       console.error("[leads] falha ao salvar ou enviar a amostra:", error);
