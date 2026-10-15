@@ -28,65 +28,67 @@ export function Offer() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <div className="mx-auto mt-12 grid max-w-4xl overflow-hidden rounded-2xl bg-white text-shadow-none shadow-[0_40px_90px_-30px_rgb(40_0_8/0.7)] md:grid-cols-[0.8fr_1.2fr]">
-            <div className="hidden items-center justify-center bg-paper p-10 md:flex">
-              <EbookCover size="sm" />
-            </div>
+          {/* Card de uma coluna, tudo centralizado: capa, itens, preço e botão */}
+          <div className="mx-auto mt-12 flex max-w-xl flex-col items-center rounded-2xl bg-white px-6 py-10 text-center text-shadow-none shadow-[0_40px_90px_-30px_rgb(40_0_8/0.7)] sm:px-12 sm:py-12">
+            <EbookCover size="sm" />
 
-            <div className="p-7 sm:p-10">
-              <ul className="space-y-3">
-                {included.map((item) => (
-                  <li key={item} className="flex gap-3 text-lg leading-snug">
-                    <CheckCircle aria-hidden weight="fill" className="size-6 shrink-0 text-judo-red" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-8 border-t border-zinc-200 pt-6">
-                {price.full ? (
-                  <p className="text-ink-soft">
-                    De <s>{formatPrice(price.full)}</s>
-                  </p>
-                ) : null}
-                <p className="flex items-baseline gap-2">
-                  <span className="text-ink-soft">{price.full ? "Por apenas" : "Por"}</span>
-                  <span className="font-display text-6xl font-extrabold tracking-tight text-judo-red">
-                    {formatPrice(price.current)}
-                  </span>
-                </p>
-                {price.installments ? (
-                  <p className="mt-1 text-ink-soft">
-                    ou {price.installments.count}x de {formatPrice(price.installments.value)} no cartão
-                  </p>
-                ) : null}
-              </div>
-
-              <CheckoutButton location="oferta" label="Quero meu ebook agora" size="lg" fullWidth className="mt-7" />
-
-              <ul className="mt-5 flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm text-ink-soft">
-                <li className="flex items-center gap-1.5">
-                  <LockSimple aria-hidden weight="bold" className="size-4" /> Pagamento seguro
+            <ul className="mt-10 space-y-3 text-left">
+              {included.map((item) => (
+                <li key={item} className="flex gap-3 text-lg leading-snug">
+                  <CheckCircle aria-hidden weight="fill" className="size-6 shrink-0 text-judo-red" />
+                  {item}
                 </li>
-                <li className="flex items-center gap-1.5">
-                  <Lightning aria-hidden weight="bold" className="size-4" /> Acesso imediato
-                </li>
-                <li className="flex items-center gap-1.5">
-                  <Wallet aria-hidden weight="bold" className="size-4" /> {site.paymentMethods}
-                </li>
-              </ul>
+              ))}
+            </ul>
 
-              {price.launchDeadline ? (
-                <p className="mt-6 rounded-xl bg-judo-red-soft p-4 text-center text-sm font-medium text-judo-wine">
-                  O preço de lançamento vale até {price.launchDeadline.date}. Depois, o valor passa para{" "}
-                  {formatPrice(price.launchDeadline.nextPrice)}.
+            <div className="mt-8 w-full border-t border-zinc-200 pt-7">
+              {price.full ? (
+                <p className="text-ink-soft">
+                  De <s>{formatPrice(price.full)}</s>
                 </p>
               ) : null}
-
-              {site.paymentProvider ? (
-                <p className="mt-4 text-center text-xs text-ink-soft">Compra processada por {site.paymentProvider}</p>
+              <p className="flex items-baseline justify-center gap-2">
+                <span className="text-lg text-ink-soft">{price.full ? "Por apenas" : "Por"}</span>
+                <span className="font-display text-6xl font-extrabold tracking-tight text-judo-red">
+                  {formatPrice(price.current)}
+                </span>
+              </p>
+              {price.installments ? (
+                <p className="mt-1 text-ink-soft">
+                  ou {price.installments.count}x de {formatPrice(price.installments.value)} no cartão
+                </p>
               ) : null}
             </div>
+
+            <CheckoutButton
+              location="oferta"
+              label="Quero meu ebook agora"
+              size="lg"
+              className="mt-7 w-full sm:w-auto sm:px-12"
+            />
+
+            <ul className="mt-5 flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm text-ink-soft">
+              <li className="flex items-center gap-1.5">
+                <LockSimple aria-hidden weight="bold" className="size-4" /> Pagamento seguro
+              </li>
+              <li className="flex items-center gap-1.5">
+                <Lightning aria-hidden weight="bold" className="size-4" /> Acesso imediato
+              </li>
+              <li className="flex items-center gap-1.5">
+                <Wallet aria-hidden weight="bold" className="size-4" /> {site.paymentMethods}
+              </li>
+            </ul>
+
+            {price.launchDeadline ? (
+              <p className="mt-6 rounded-xl bg-judo-red-soft p-4 text-sm font-medium text-judo-wine">
+                O preço de lançamento vale até {price.launchDeadline.date}. Depois, o valor passa para{" "}
+                {formatPrice(price.launchDeadline.nextPrice)}.
+              </p>
+            ) : null}
+
+            {site.paymentProvider ? (
+              <p className="mt-4 text-xs text-ink-soft">Compra processada por {site.paymentProvider}</p>
+            ) : null}
           </div>
         </Reveal>
       </div>

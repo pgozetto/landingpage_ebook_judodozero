@@ -28,14 +28,14 @@ export const site = {
     ],
   },
 
-  /** Link do checkout (Hotmart / Kiwify / Eduzz). PREENCHER via .env */
   /** ID do pixel da Meta. É público (aparece no HTML), por isso tem valor padrão aqui. */
   metaPixelId: process.env.NEXT_PUBLIC_META_PIXEL_ID || "2235996023637025",
-  checkoutUrl: process.env.NEXT_PUBLIC_CHECKOUT_URL || "",
+  /** Link do checkout na Kiwify. É público (aparece no botão); o .env só serve para trocar. */
+  checkoutUrl: process.env.NEXT_PUBLIC_CHECKOUT_URL || "https://pay.kiwify.com.br/9A7XAAa",
   /** Link da área de membros / download, usado na página de obrigado. PREENCHER via .env */
   ebookAccessUrl: process.env.NEXT_PUBLIC_EBOOK_ACCESS_URL || "",
-  /** Plataforma que processa a compra. PREENCHER */
-  paymentProvider: null as "Hotmart" | "Kiwify" | "Eduzz" | null,
+  /** Plataforma que processa a compra. */
+  paymentProvider: "Kiwify" as "Hotmart" | "Kiwify" | "Eduzz" | null,
   paymentMethods: "Pix, cartão e boleto", // PREENCHER: confirme as opções ativas
 
   price: {
